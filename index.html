@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>公安信息资源查询</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+
+            background: url(img/ga.jpg) no-repeat;
+            background-size: cover;
+            -ms-behavior: url(css/backgroundsize.min.htc);
+            behavior: url(css/backgroundsize.min.htc);
+            background-size: 1921px 1500px;
+        }
+
+        .content {
+            height: 1350px;
+            width: 780px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            margin-top: 50px;
+            padding: 10px 10px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+            /*指已经访问过的链接*/
+        }
+
+        .btn {
+            width: 200px;
+            height: 40px;
+            padding-top: 10px;
+            border-radius: 10%;
+            border: 1px solid #ddd;
+            color: #fff;
+            float: left;
+            margin-left: 25px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myapp" ng-controller="mycontroller">
+    <div style="width: 510px;height: 100px; margin: 0 auto;">
+        <div style="width: 90px;height: 90px;float: left; margin-top: 40px">
+            <img src="img/jh_2.png" style="width: 90px;height: 90px;">
+        </div>
+        <div style="width:300px;height: 40px; float: left;margin-top: 45px;margin-left: 20px;">
+            <h1 style="color: #fff;">公安信息资源查询</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div style="background: #fff;width: 70px;height: 50px;line-height: 50px;border-top-left-radius: 10%;border-top-right-radius:10%;text-align: center">
+            <label>公安部</label>
+        </div>
+        <hr>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div style="width: 12.5%;height: 40px;padding-top: 10px;text-align: center;border-radius: 10%;border: 1px solid #ddd;color: #fff;float: left;margin-left: 25px">
+                <a href="http://ys.zyfw.ga/" title="本链接可以查询全国类人口基本信息及背景信息，民警请用本人数字证书登录查询。'云搜'高级用户权限可以查询全国类人口的同行、同住等相关信息，权限需要向市局科信支队大数据大队申请。
+                    " target="_blank">公安部云搜</a>
+            </div>
+            <div style="width: 5px;height: 40px;border-right: 1px dashed #ddd;float: left;"></div>
+            <div style="width: 12.5%;height: 40px;padding-top: 10px;text-align: center;border-radius: 10%;border: 1px solid #ddd;color: #fff;float: left;margin-left: 5px">
+                <a id="down" title="请下载操作说明" style="cursor: pointer;">操作说明</a>
+            </div>
+            <div class="btn">
+                <a href="http://ztry-zyk.zx.ga/zhyy_zt//pages/xzztry/xzztry.jsp?desktopAppId=1846&biz=zt&ly=ztyw" title="本链接主要用于在逃人员的登记、撤销和移交的查询，民警打开界面即可查询，平台支持身份证号、姓名入库登记日期等多项查询。"
+                    target="_blank">全国在逃人员</a>
+            </div>
+            <div class="btn">
+                <a href="http://jdcjsr-zyk.zx.ga/first.do" title="本链接可以查询全国类驾驶人、机动车的基本信息，民警需要用本人数字证书登录查询。" target="_blank">全国机车驾驶</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.6.1.37:8001/beeaweb/" title="本链接可以查询全国出入境证件的统计信息 ，民警需要使用本人数字证书登录查询。部分功能的授权与警种关联。" target="_blank">全国出境入境</a>
+            </div>
+            <div class="btn">
+                <a href="http://dfaj.xz.ga/" title="本链接可以查询公安部及各地相应的通知通报，民警打开界面即可查询，但具体类案件的查询需要联系相关警种进行授权。" target="_blank">全国跨区办案</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.12.221.133/ztry_hstjl/ztry/tjlsy.do" title="本链接主要用于通缉人员、通缉令的查询，民警打开界面即可查询，平台支持身份证号、姓名等多项查询。" target="_blank">部通缉令信息</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.1.1.183:9080/dna/pages/intoLogin.action#" title="本链接为全国公安机关DNA数据库，包括数据库比对系统和实验室管理系统。本平台需要相关警种授权。" target="_blank">部DNA数据库</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.2.60.7/firestat/SignIn.aspx?ReturnUrl=/firestat/Default.aspx" title="本链接为全国火灾统计,本平台需要相关警种授权。" target="_blank">全国火灾统计</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.2.7:9080/qzmis/" title="本链接为全国枪支管理信息,本平台需要相关部门授权。" target="_blank">全国枪支信息</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.12.223.132/dqc_zyk/pages/dqjdc/dqjdc.jsp?desktopAppId=1769&biz=jdc" title="本链接主要用于全国被盗抢机动车的登记、撤销的查询，民警打开界面即可查询，平台支持车牌号、车辆类型等多种查询。"
+                    target="_blank">全国被盗抢车</a>
+            </div>
+            <div class="btn">
+                <a href="http://jtgl.jg.ga/" target="_blank">全国交通信息</a>
+            </div>
+            <div class="btn">
+                <a href="http://jdxt.jd.ga/" target="_blank">全国禁毒信息</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.5.16.140/roeee/SignOnServlet?loginForward=" target="_blank">民航安保情报</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.1.1.157:9080/gabtjnew/jsp/login.jsp" target="_blank">全国装备管理</a>
+            </div>
+            <div class="btn">
+                <a href="http://jwzf.gh.ga/Page/index/login.html" target="_blank">国际执法合作</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.5.36.27:8080/bfftd/index.jsp" target="_blank">公安边防信息</a>
+            </div>
+            <div class="btn">
+                <a href="http://swtj.rs.ga/" target="_blank">全国民警伤亡</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.1.1.157:9080/gabjj/jsp/login.jsp" target="_blank">公安基本建设</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.1.6.99:9080/ecid/" target="_blank">全国经侦信息</a>
+            </div>
+            <div class="btn">
+                <a href="http://zddw-zyk.zx.ga/" target="_blank">全国重点单位</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.12.223.175/szry_zyk/pages/szry/index.jsp" target="_blank">全国失踪人员</a>
+            </div>
+        </div>
+        <div style="background: #fff;width: 70px;height: 50px;line-height: 50px;border-top-left-radius: 10%;border-top-right-radius:10%;text-align: center;margin-top: 10px">
+            <label>公安厅</label>
+        </div>
+        <hr>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.20.33.115:9081/zhyy/portal" target="_blank">新疆公安综合应用信息</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.37.31/portal/index.jsp" target="_blank">新疆公安警务信息综合平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.36.73:7001/PGIS_Portal/" target="_blank">新疆公安警用地理信息系统</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.20.46.52:7001/yth/index.jsp" target="_blank">新疆公安一体化指挥调度平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.47.195/xrap/openMain.jsp" target="_blank">新疆公安监督管理信息平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.40.8/gzsb/admin/login.asp" target="_blank">交警故障申报</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.20.48.64:9080/didsserver/login?service=http%3A%2F%2F10.20.33.116%3A9080%2FSSOlogin%2Fproxy%3FforwardUrl%3D%2Fportal&appId=650000000000010&loginName=&loginPage=&redirectUrl=http%3A%2F%2F10.20.33.116%3A9080%2Fportal&forwardUrl=/portal"
+                    target="_blank">新疆公安情报信息平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.34.115/forum.php" target="_blank">新疆公安信息化建设应用论坛</a>
+            </div>
+            <div class="btn">
+                <a href="http://www.jz.xj/qbadmin/login.asp" target="_blank">经侦情报报送</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.20.2.7:9080/mbxxglxt/" target="_blank">民爆物品信息</a>
+            </div>
+            <div class="btn">
+                <a href="https://10.20.33.50/por/login_psw.csp" target="_blank">新疆公安国安信息系统</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.20.34.190/" target="_blank">新疆公安互联网服务平台</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn" style="padding-left: 1px">
+                <a href="http://10.20.33.77/login/Login.jsp?logintype=1" target="_blank">新疆公安行政管理业务办公平台</a>
+            </div>
+        </div>
+        <div style="background: #fff;width: 70px;height: 50px;line-height: 50px;border-top-left-radius: 10%;border-top-right-radius:10%;text-align: center;margin-top: 10px">
+            <label>乌鲁木齐</label>
+        </div>
+        <hr>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.247.84.243:8081/QBDD/" target="_blank">情报线索核查调度平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.247.84.241:8081/ZYDL/" target="_blank">情报报送系统</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.21.1.11:8089/" target="_blank">暴恐音视频查缉平台(乌市版)</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.21.2.80:9080/UIIS/" target="_blank">公安情报信息网</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.21.1.73/" target="_blank">警务信息综合应用平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.21.1.127/PGIS_Portal/login.jsp" target="_blank">警用地理信息基础平台</a>
+            </div>
+        </div>
+        <div style="width: 765px;height: 60px;margin-top: 10px;">
+            <div class="btn">
+                <a href="http://10.21.1.45/Page/Login/" target="_blank">视频监控联网平台</a>
+            </div>
+            <div class="btn">
+                <a href="http://10.21.5.20/" target="_blank">警务智搜</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // var w = $(window).width();
+        // var h = $(window).height();
+
+        // document.getElementsByTagName('body').width = w + 'px';
+        // document.getElementsByTagName('body').height = h + 'px';
+
+        document.getElementById('down').onclick = function () {
+            var url = "http://10.21.5.50:8088/web_site/test.doc";
+            window.open(url);
+        }
+    </script>
+</body>
+
+</html>
